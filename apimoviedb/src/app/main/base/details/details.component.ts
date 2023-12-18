@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CharactersService } from '../characters/characters.service';
+import { PeliculasService } from '../peliculas/peliculas.service';
 
 @Component({
   selector: 'app-details',
@@ -8,17 +8,17 @@ import { CharactersService } from '../characters/characters.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  character:any = null;
+  pelicula:any = null;
 
-  constructor(private route: ActivatedRoute,private characterService: CharactersService){}
+  constructor(private route: ActivatedRoute,private peliculaService: PeliculasService){}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const elementId:number = Number(params['id']);
-      this.character = this.characterService.getCharactersById(elementId.toString())
+      this.pelicula = this.peliculaService.getPeliculasById(elementId.toString())
         .subscribe(result => {
-          this.character = result;
-          console.log(this.character);
+          this.pelicula = result;
+          console.log(this.pelicula);
           
         });      
     });

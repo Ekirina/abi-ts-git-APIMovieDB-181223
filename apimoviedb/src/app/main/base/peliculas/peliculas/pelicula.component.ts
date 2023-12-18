@@ -1,13 +1,13 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { CharactersService } from '../characters.service';
+import { PeliculasService } from '../peliculas.service';
 
 @Component({
-  selector: 'app-character',
-  templateUrl: './character.component.html',
-  styleUrls: ['./character.component.css'],
+  selector: 'app-pelicula',
+  templateUrl: './pelicula.component.html',
+  styleUrls: ['./pelicula.component.css'],
 })
-export class CharacterComponent implements OnChanges {
-  listaCharacters: any = [];
+export class PeliculaComponent implements OnChanges {
+  listaPeliculas: any = [];
   firstRow: any = [];
   secondRow: any = [];
   thirdRow: any = [];
@@ -18,12 +18,12 @@ export class CharacterComponent implements OnChanges {
   nextPage:string = '';
   previousPage:string = '';
 
-  constructor(private charactersService: CharactersService) {}
+  constructor(private peliculasService: PeliculasService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
       this.page = changes['page'].currentValue;
-      this.charactersService.getCharactersByPage(this.page.toString()).subscribe( (result) => {
-        this.listaCharacters = result.results;
+      this.peliculasService.getPeliculas(this.page.toString()).subscribe( (result) => {
+        this.listaPeliculas = result.results;
         //this.totalPages = result.info.pages;
         //if(result.info.next != undefined) this.nextPage = result.info.next;
         //if(result.index.previous != undefined) this.previousPage = result.index.previous;
@@ -34,11 +34,11 @@ export class CharacterComponent implements OnChanges {
         this.fifthRow = [];
         
         for (let index = 0; index < 4; index++) {
-          this.firstRow.push(this.listaCharacters[index]);
-          this.secondRow.push(this.listaCharacters[index + 4]);
-          this.thirdRow.push(this.listaCharacters[index + 8]);
-          this.fourthRow.push(this.listaCharacters[index + 12]);
-          this.fifthRow.push(this.listaCharacters[index + 16]);
+          this.firstRow.push(this.listaPeliculas[index]);
+          this.secondRow.push(this.listaPeliculas[index + 4]);
+          this.thirdRow.push(this.listaPeliculas[index + 8]);
+          this.fourthRow.push(this.listaPeliculas[index + 12]);
+          this.fifthRow.push(this.listaPeliculas[index + 16]);
         }
       }); 
   }

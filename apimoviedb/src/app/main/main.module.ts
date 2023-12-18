@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BaseComponent } from './base/base.component';
 import { HomeComponent } from './base/home/home.component';
-import { AboutComponent } from './base/about/about.component';
 import { DetailsComponent } from './base/details/details.component';
-import { CharactersComponent } from './base/characters/characters.component';
-import { CharacterComponent } from './base/characters/character/character.component';
+import { PeliculasComponent } from './base/peliculas/peliculas.component';
+/*import { PeliculaComponent } from './base/peliculas/peliculas/pelicula.component';*/
 import { AppRoutingModule } from '../app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -15,10 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     BaseComponent,
     HomeComponent,
-    AboutComponent,
     DetailsComponent,
-    CharactersComponent,
-    CharacterComponent,
+    PeliculasComponent,
+    /*PeliculaComponent,*/
   ],
   imports: [
     CommonModule,
@@ -27,9 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   exports: [
     HomeComponent,
-    AboutComponent,
     DetailsComponent,
-    CharactersComponent,
+    PeliculasComponent,
     BaseComponent
   ],
 })

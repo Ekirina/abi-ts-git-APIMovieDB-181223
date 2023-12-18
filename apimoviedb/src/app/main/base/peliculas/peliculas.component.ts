@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-characters',
-  templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.css']
+  selector: 'app-peliculas',
+  templateUrl: './peliculas.component.html',
+  styleUrls: ['./peliculas.component.css']
 })
-export class CharactersComponent{
+export class PeliculasComponent{
   actualPage:number = 1;
 
   nextPage(){
