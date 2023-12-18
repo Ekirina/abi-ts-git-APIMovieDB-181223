@@ -1,0 +1,12 @@
+<app-character [page]="actualPage"></app-character>
+<div class="row center-elem">
+    <div id="page" class="btn-group btn-group-sm btn-1" role="group" aria-label="Small button group">
+      <a type="button" class="btn btn-outline-warning" (click)="previousPage()">prev</a>
+      <button type="button" class="btn btn-warning" disabled>{{actualPage}} of 42</button>
+      <a type="button" class="btn btn-outline-warning" (click)="nextPage()">next</a>
+    </div>
+    <div id= "pages" class="btn-group btn-group-sm btn-1" role="group" aria-label="Small button group">
+      <a type="button" class="btn btn-outline-warning" (click)="goToFirstPage()">first page</a>
+      <a type="button" class="btn btn-outline-warning" (click)="goToLastPage()">last page</a>
+    </div>
+  </div>
